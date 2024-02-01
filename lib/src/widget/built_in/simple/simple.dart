@@ -7,6 +7,7 @@ class SimpleToastWidget extends StatelessWidget {
   const SimpleToastWidget({
     super.key,
     required this.type,
+    this.customStyle,
     this.title,
     this.primaryColor,
     this.backgroundColor,
@@ -41,7 +42,9 @@ class SimpleToastWidget extends StatelessWidget {
 
   final bool applyBlurEffect;
 
-  SimpleStyle get defaultStyle => SimpleStyle(type);
+  final BuiltInStyle? customStyle;
+
+  BuiltInStyle get defaultStyle => customStyle ?? SimpleStyle(type);
 
   @override
   Widget build(BuildContext context) {

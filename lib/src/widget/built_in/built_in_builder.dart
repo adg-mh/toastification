@@ -12,6 +12,7 @@ class BuiltInBuilder extends StatelessWidget {
     required this.item,
     this.type,
     this.style,
+    this.customStyle,
     this.direction,
     this.title,
     this.description,
@@ -40,6 +41,8 @@ class BuiltInBuilder extends StatelessWidget {
   final ToastificationType? type;
 
   final ToastificationStyle? style;
+
+  final BuiltInStyle? customStyle;
 
   final Widget? title;
   final Widget? description;
@@ -100,6 +103,7 @@ class BuiltInBuilder extends StatelessWidget {
         item: item,
         type: type,
         style: style,
+        customStyle: customStyle,
         direction: direction,
         title: title,
         description: description,
@@ -147,6 +151,7 @@ class BuiltInToastBuilder extends StatelessWidget {
     this.item,
     required this.type,
     required this.style,
+    this.customStyle,
     required this.direction,
     this.title,
     this.description,
@@ -170,6 +175,8 @@ class BuiltInToastBuilder extends StatelessWidget {
   final ToastificationType? type;
 
   final ToastificationStyle? style;
+
+  final BuiltInStyle? customStyle;
 
   final Widget? title;
   final Widget? description;
@@ -311,6 +318,7 @@ class BuiltInToastBuilder extends StatelessWidget {
             ),
           ToastificationStyle.simple => SimpleToastWidget(
               type: type,
+              customStyle: customStyle,
               title: title,
               primaryColor: primaryColor,
               backgroundColor: backgroundColor,
